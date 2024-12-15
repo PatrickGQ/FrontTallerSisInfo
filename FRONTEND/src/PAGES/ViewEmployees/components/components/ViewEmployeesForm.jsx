@@ -4,6 +4,7 @@ import { useBranch } from '../../../../CONTEXTS/BranchContext';
 import { getEmployeesWithFiltersRequest, editEmployeeRequest, deleteEmployeeRequest } from '../../../../api/branch';
 import QuestionMessage from "../../../../GENERALCOMPONENTS/QuestionMessage";
 import AcceptMessage from "../../../../GENERALCOMPONENTS/AcceptMessage";
+import { API } from '../../../../api/conf/routeApi';
 
 const ViewEmployeesForm = ({ activeFilters }) => {
   const [employees, setEmployees] = useState([]);
@@ -222,7 +223,7 @@ const ViewEmployeesForm = ({ activeFilters }) => {
               <div className="w-24 h-24 mb-4">
                 {employee.photo ? (
                   <img
-                    src={`http://localhost:3000/uploads/${employee.photo}`}
+                    src={`${API}/uploads/${employee.photo}`}
                     alt={employee.name}
                     className="w-full h-full object-cover rounded-full border-2 border-gray-300"
                   />

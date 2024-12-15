@@ -8,6 +8,7 @@ import { getProductsByBranchRequest, editProductRequest, deleteProductRequest } 
 import QuestionMessage from "../../GENERALCOMPONENTS/QuestionMessage";
 import AcceptMessage from "../../GENERALCOMPONENTS/AcceptMessage";
 import { useAuth } from '../../GENERALCOMPONENTS/AuthContext';
+import { API } from '../../api/conf/routeApi';
 
 const ViewProducts = () => {
   const [products, setProducts] = useState([]);
@@ -129,7 +130,7 @@ const ViewProducts = () => {
           >
             {product.image && (
               <img
-                src={`http://localhost:3000/uploads/${product.image}`}
+                src={`${API}/uploads/${product.image}`}
                 alt={product.nameProduct}
                 className="w-full h-48 object-cover rounded-t-lg"
               />

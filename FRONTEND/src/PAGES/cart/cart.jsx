@@ -4,6 +4,7 @@ import { useAuth } from '../../GENERALCOMPONENTS/AuthContext';
 import { addSaleToBranchRequest } from '../../api/branch';
 import QuestionMessage from "../../GENERALCOMPONENTS/QuestionMessage.jsx";
 import AcceptMessage from "../../GENERALCOMPONENTS/AcceptMessage.tsx";
+import { API } from '../../api/conf/routeApi.js';
 
 const Cart = () => {
   const { user } = useAuth();
@@ -109,7 +110,7 @@ const Cart = () => {
                   <li key={item._id} className="flex items-center justify-between mb-4 p-4 border-b border-gray-200">
                     <div className="flex items-center">
                       <img
-                        src={`http://localhost:3000/uploads/${item.image}`}
+                        src={`${API}/uploads/${item.image}`}
                         alt={item.nameProduct}
                         className="w-16 h-16 object-cover rounded mr-4"
                       />

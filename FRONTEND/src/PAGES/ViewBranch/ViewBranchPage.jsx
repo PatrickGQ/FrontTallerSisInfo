@@ -5,6 +5,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import { deleteBranchText, deleteBranchImage } from '../../api/branch.js';
 import QuestionMessage from "../../GENERALCOMPONENTS/QuestionMessage"; // Componente de confirmación
 import AcceptMessage from "../../GENERALCOMPONENTS/AcceptMessage"; // Componente de éxito/error
+import { API } from "../../api/conf/routeApi.js";
 
 const ViewBranchPage = () => {
   const { id } = useParams(); 
@@ -125,7 +126,7 @@ const ViewBranchPage = () => {
               <div key={image._id} className="relative">
                 <img 
                   alt="Branch Image" 
-                  src={`http://localhost:3000/${image.url}`}
+                  src={`${API}/${image.url}`}
                   className="w-full h-auto rounded-md" />
                 
                 <button

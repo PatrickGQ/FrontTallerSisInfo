@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { getProductsByBranchRequest } from "../../api/branch";
 import PublicHeader from "../../GENERALCOMPONENTS/PublicHeader";
 import { useBranch } from '../../CONTEXTS/BranchContext';
+import { API } from '../../api/conf/routeApi';
 
 const Index = () => {
     const [products, setProducts] = useState([]);
@@ -62,7 +63,7 @@ const Index = () => {
                             >
                                 {product.image && (
                                     <img
-                                        src={`http://localhost:3000/uploads/${product.image}`}
+                                        src={`${API}/uploads/${product.image}`}
                                         alt={product.nameProduct}
                                         className="w-full h-32 sm:h-40 md:h-48 object-cover rounded-t-lg"
                                     />

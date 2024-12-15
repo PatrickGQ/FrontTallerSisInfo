@@ -8,6 +8,7 @@ import { getProductsByBranchRequest } from '../../api/branch';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
+import { API } from '../../api/conf/routeApi';
 
 const HomeClient = () => {
   const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ const HomeClient = () => {
   useEffect(() => {
     const fetchPromotions = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/promotions'); 
+        const response = await axios.get(`${API}/promotions`); 
         setPromotions(response.data);
       } catch (error) {
         console.error('Error al obtener las promociones:', error);
@@ -64,7 +65,7 @@ const HomeClient = () => {
               className="relative rounded-xl overflow-hidden"
             >
               <img
-                src={`http://localhost:3000/uploads/${product.image}`}
+                src={`${API}/uploads/${product.image}`}
                 alt={product.nameProduct}
                 className="w-full h-64 sm:h-80 object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
               />
@@ -93,7 +94,7 @@ const HomeClient = () => {
                 className="bg-white rounded-lg shadow-xl p-6 transform hover:scale-105 transition-transform duration-300"
               >
                 <img
-                  src={`http://localhost:3000/uploads/${promotion.image}`}
+                  src={`${API}/uploads/${promotion.image}`}
                   alt={promotion.title}
                   className="w-full h-48 object-cover rounded-lg mb-4"
                 />
@@ -122,7 +123,7 @@ const HomeClient = () => {
               className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
             >
               <img
-                src={`http://localhost:3000/uploads/${product.image}`}
+                src={`${API}/uploads/${product.image}`}
                 alt={product.nameProduct}
                 className="w-full h-48 sm:h-56 object-cover"
               />

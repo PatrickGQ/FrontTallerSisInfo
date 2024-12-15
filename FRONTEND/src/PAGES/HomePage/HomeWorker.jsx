@@ -8,6 +8,8 @@ import {
   getBranchImagesRequest,
   getBranchTextsRequest,
 } from "../../api/branch";
+import { API } from "../../api/conf/routeApi";
+
 
 const HomeWorker = () => {
   const [branchMessages, setBranchMessages] = useState([]);
@@ -92,7 +94,7 @@ const HomeWorker = () => {
                 className="relative transform transition-all hover:scale-105"
               >
                 <img
-                  src={`http://localhost:3000/${image.url}`}
+                  src={`${API}/${image.url}`}
                   alt={`Branch image ${index + 1}`}
                   className="w-full h-64 sm:h-96 object-cover rounded-xl shadow-lg"
                 />

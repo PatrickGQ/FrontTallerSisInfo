@@ -6,6 +6,7 @@ import { CartContext } from '../../CONTEXTS/cartContext';
 import { FaEdit, FaTrash, FaShoppingCart, FaBook } from 'react-icons/fa';
 import QuestionMessage from "../../GENERALCOMPONENTS/QuestionMessage";
 import { useAuth } from '../../GENERALCOMPONENTS/AuthContext'; // Asumimos que existe este contexto
+import { API } from '../../api/conf/routeApi';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -106,7 +107,7 @@ const ProductDetails = () => {
       {product.image && (
         <div className="mb-6">
           <img
-            src={`http://localhost:3000/uploads/${product.image}`}
+            src={`${API}/uploads/${product.image}`}
             alt={product.nameProduct}
             className="w-full h-64 object-cover rounded-lg shadow-md"
           />

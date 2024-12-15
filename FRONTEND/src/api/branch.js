@@ -34,7 +34,7 @@ export const addTextToBranchesRequest = async (textContent, branchIds) => {
 };
 
 export const getBranchImagesRequest = (id) => {
-  return axios.get(`http://localhost:3000/api/branches/${id}/images`)
+  return axios.get(`${API}/branches/${id}/images`)
     .then(response => response.data)  // Retorna los datos de la respuesta
     .catch(error => {
       console.error('Error al obtener las imágenes de la sucursal:', error);
@@ -44,7 +44,7 @@ export const getBranchImagesRequest = (id) => {
 
 export const getBranchTextsRequest = (id) => {
   console.log("IDDDD", id)
-  return axios.get(`http://localhost:3000/api/branches/${id}/texts`)
+  return axios.get(`${API}/branches/${id}/texts`)
     .then(response => response.data)  // Retorna los datos de la respuesta
     .catch(error => {
       console.error('Error al obtener los textos de la sucursal:', error);
@@ -57,7 +57,7 @@ export const getBranchDetailsRequest = (id) => {
 }
 
 export const deleteBranchText = (branchId, textId) => {
-  return axios.delete(`http://localhost:3000/api/branches/${branchId}/text/${textId}`)
+  return axios.delete(`${API}/branches/${branchId}/text/${textId}`)
     .then(response => response.data)
     .catch(error => {
       console.error('Error al eliminar el texto:', error);
@@ -66,7 +66,7 @@ export const deleteBranchText = (branchId, textId) => {
 };
 
 export const deleteBranchImage = (branchId, imageId) => {
-  return axios.delete(`http://localhost:3000/api/branches/${branchId}/image/${imageId}`)
+  return axios.delete(`${API}/branches/${branchId}/image/${imageId}`)
     .then(response => response.data)
     .catch(error => {
       console.error('Error al eliminar la imagen:', error);

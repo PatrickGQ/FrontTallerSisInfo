@@ -55,7 +55,6 @@ const ProductForm = () => {
       console.log(res);
 
       setForm({ nameProduct: "", price: "", image: null, id: "", description: "" });
-      console.log(form.image);
       // Muestra mensaje de éxito
       setMessage(`Producto agregado exitosamente en la sucursal ${selectedBranch}. Vaya a la vista de productos para verlo.`);
       setShowAccept(true);

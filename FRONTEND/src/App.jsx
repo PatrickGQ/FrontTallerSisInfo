@@ -23,7 +23,7 @@ import { CartProvider } from "./CONTEXTS/cartContext";
 import UserProfile from "./PAGES/UserProfile";
 import Report from "./PAGES/Report/Report";
 import PrivateRoute from "./GENERALCOMPONENTS/PrivateRoute";
-import Index from "./PAGES/Index";
+import Index from "./PAGES/Index/Index";
 import Register from "./PAGES/RegisterUser/RegisterUser";
 import ViewBranchPage from "./PAGES/ViewBranch/ViewBranchPage";
 import CardDetailsPage from "./GENERALCOMPONENTS/CardDetailsForm";
